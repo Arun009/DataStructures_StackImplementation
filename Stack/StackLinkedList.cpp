@@ -61,11 +61,15 @@ bool StackLinkedList::isEmpty()
 
 void StackLinkedList::display()
 {
-	cout << endl;
-	struct node *ptr = top;
-	while (ptr != nullptr) {
-		cout << ptr->data << endl;
-		ptr = ptr->next;
+	if (this->isEmpty())
+		cout << "Stack is empty" << endl;
+	else {
+		cout << endl;
+		struct node *ptr = top;
+		while (ptr != nullptr) {
+			cout << ptr->data << endl;
+			ptr = ptr->next;
+		}
 	}
 	system("pause");
 }
