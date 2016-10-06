@@ -15,7 +15,7 @@ StackLinkedList::~StackLinkedList()
 
 void StackLinkedList::push(int data)	// Push data
 {
-	struct node *newNode;				// Declare a new struct node
+	node *newNode;						// Declare a new node
 	if (top == nullptr) {				// Check if the stack is empty
 		newNode = new node;				// if yes, initialize the new node
 		newNode->data = data;			// Set the data attribute of the node
@@ -44,7 +44,7 @@ void StackLinkedList::pop()
 		system("pause");
 	}
 	else {								// If stack contains value
-		struct node *temp;				// Declare a temporary struct node
+		node *temp;						// Declare a temporary node
 		temp = top;						// Set the temp to the top node
 		top = top->next;				// Set top to the node pointed by next
 		delete temp;					// Delete the temp node
@@ -65,7 +65,7 @@ void StackLinkedList::display()
 		cout << "Stack is empty" << endl;
 	else {
 		cout << endl;
-		struct node *ptr = top;
+		node *ptr = top;
 		while (ptr != nullptr) {
 			cout << ptr->data << endl;
 			ptr = ptr->next;
@@ -77,7 +77,7 @@ void StackLinkedList::display()
 void StackLinkedList::destroy()			// Delete the list manually
 {
 	while (top != nullptr) {			// Until top becomes nullptr do the below
-		struct node *deleteNode;		// Declare a temporary node
+		node *deleteNode;				// Declare a temporary node
 		deleteNode = top;				// Set the temp node to point to the top
 		top = top->next;				// Set top to point to the node pointed by next
 		delete deleteNode;				// Delete the temp node
